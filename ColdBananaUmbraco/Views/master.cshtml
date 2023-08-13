@@ -1,0 +1,74 @@
+﻿@using ContentModels = Umbraco.Web.PublishedModels;
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Web;
+@{
+    Layout = null;
+}
+
+
+
+<html>
+<head>
+    <title>Welcome - Cold Banana | Tech Agency UK | Bournemouth | Dubai | Umbraco</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <div titletop="" titlebottom="" text="" class="hero-wrapper slant-Right hero-large" style="background:#171717">
+        <div class="hero__overlay">
+            <img src="https://d33wubrfki0l68.cloudfront.net/df0c35ec9d53afbfa8c7e3959c6fb6e003282113/2c643/_nuxt/img/hex-transparent.efcad8f.svg" class="hero__overlay-image">
+            <img src="https://d33wubrfki0l68.cloudfront.net/9465e0a98a88316afd3f37adbec6651322b29807/af514/_nuxt/img/hex-transparent-mobile.34052b5.svg" class="hero__overlay-image--mobile">
+        </div>
+        @{
+        var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+        .Children()
+        .Where(x => x.IsVisible());
+    }
+    <!-- Navigation -->
+    <div class="container">
+        <nav class="navbar navbar-expand navbar-light">
+            <img src="/images/bear.png" class="img-fluid" alt="Arm with Umbraco Logo">
+            <a class="navbar-brand font-weight-bold" href="@Model.Root().Url()">Cold Banana</a>
+            <!-- Links -->
+            <ul class="navbar-nav">
+                @foreach (var item in selection)
+                {
+                    <li class="nav-item">
+                        <a href="@item.Url()" class="nav-link">@item.Name()</a>
+                    </li>
+                }
+            </ul>
+
+        </nav>
+    </div>
+        @RenderBody()
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <br/>
+        <div class="footer__inner__address footer-box">
+            <div class="footer__inner__address--line">Bournemouth</div>
+            Banana House, 16 Poole Hill,
+            Bournemouth, BH2 5PS
+        </div>
+        <br />
+        <div class="footer__inner__address footer-box">
+            <div class="footer__inner__address--line">Dubai</div>
+            Dubai Digital Park, Building A2, Dubai Silicon Oasis,
+            Dubai, United Arab Emirates
+        </div>
+        <div class="footer__outer">
+            <a>ColdBanana-2023</a>
+
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

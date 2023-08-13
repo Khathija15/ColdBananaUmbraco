@@ -1,0 +1,70 @@
+﻿@using ContentModels = Umbraco.Web.PublishedModels;
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ColdBananaHome>
+@using Umbraco.Web;
+
+@{
+    Layout = "master.cshtml";
+}
+
+<html>
+
+<body>
+    <!-- This is where we're going to render our content -->
+
+    <div class="hero heroPrimary">
+        <div class="hero__inner container">
+            <!----> <!---->
+            <div filter-tags="" class="hero-primary">
+                <div class="hero__text-container">
+                    <h1 class="hero__text-container--top" style="padding-left:30px;">
+                        We are a Tech Agency
+                    </h1>
+                </div>
+            </div>
+            <div class="container">
+
+                <div class="section" style="padding-right:150px;">
+                    <div class="col-md-12">
+
+                        @Model.Value("bodyText")
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grey Banner -->
+            <div class="container-fluid grey-bg" style="padding-right:10px;">
+                <br />
+                <h3 class="font-weight-bold">We build transformative digital experiences to impact, innovate and inspire</h3>
+                <br />
+                <p>Cold Banana delivers value at scale without compromising on security and quality. We develop transformative .NET web and mobile platforms for clients in a range of verticals like eCommerce, finance, sport, government, tourism, hospitality and more.</p>
+                @*<div class="container" style="padding-right:100px;">
+        <div class="row section" style="padding-right:100px;">*@
+
+
+                <p>Cold Banana delivers value at scale without compromising on security and quality. We develop transformative .NET web and mobile platforms for clients in a range of verticals like eCommerce, finance, sport, government, tourism, hospitality and more.</p>
+
+                <div class="col-md-12">
+                    <img src="/images/umkent.png" style="padding-left:280px;" alt="Community illustration">
+
+                </div>
+                <p>
+                    Whatever type or scale of your project, Umbraco will be able to handle it - and the cherry on top; with Umbraco’s well-known editor friendly UI,
+                    no matter how complex a site you’re building, you know that your editors will still find it a breeze to edit. Oh, and the cherry on top of the cherry -
+                    there's <span class="font-weight-bold">no need for you to spend time learning a new coding or templating language as Umbraco is based on C#, javaScript and Razor</span>.
+                </p>
+                <br/>
+            </div>
+                @*</div>
+            </div>*@
+
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

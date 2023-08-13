@@ -1,0 +1,53 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    Layout = "Master.cshtml";
+}
+
+
+<div class="container">
+    <div class="hero__text-container" align="center">
+        <h1 class="hero__text-container--top">
+            Send us a Mail
+        </h1>
+    </div>
+    <div class="section" align="center">
+        <div class="col-md-12">
+            <!-- The Contact form  Html.RenderAction("RenderForm", "Email")-->
+            @if (TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
+            {
+                <p>Your message was sent successfully!</p>
+            }
+            
+           else
+            {
+            Html.RenderAction("ContactForm", "ContactSurface");
+            }
+        </div>
+
+    </div>
+</div>
+<div class="container">
+
+    <div class="row section" style="width:120%;">
+        <div class="col-md-12" >
+
+            
+                <img src="/images/telephone.jpg" style="width:800px" align="middle" alt="Community illustration">
+            
+            <p></p>
+            <div class="col-md-8">
+                <h1>Ready to discuss your challenges?</h1>
+                <br /><br />
+                <p>Cold Banana have been supporting business like yours since 2015, if you would like to find out more about how we could help you and your business than please get in touch. Alternatively if you are looking to find out how you can join the team then please get in touch to speak with one of our team.</p>
+
+                Kindly fill the given enquiry form to get an update from us immediately.
+                <br/><br/>
+                <p>Email : <a>hello@coldbanana.com</a></p>
+
+                <p>Phone : <b>+44 (0) 1202 798601</b></p>
+
+                <p>Address : Bournemouth, Banana House, 16 Poole Hill, Bournemouth, BH2 5PS.<p>
+            </div>
+        </div>
+    </div>
+</div>
