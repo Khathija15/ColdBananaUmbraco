@@ -354,6 +354,7 @@
     <Content Include="Views\Index.cshtml" />
     <Content Include="Views\contentPage.cshtml" />
     <Content Include="Views\contact.cshtml" />
+    <Content Include="README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
